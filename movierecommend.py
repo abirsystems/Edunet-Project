@@ -28,8 +28,9 @@ def recommend(movie):
 
 # Loading movies dataset
 movies = pickle.load(open('movies.pkl', 'rb'))
-with open("similarity.pkl", "rb") as f:
-    similarity = pickle.load(f)
+url = "https://huggingface.co/datasets/ml-enthusiast123/edunet-assets/resolve/main/similarity.pkl"
+similarity = pickle.loads(requests.get(url).content)
+
 movies_names = movies['title'].values
 
 # UI
@@ -56,5 +57,6 @@ if st.button('Show Recommendations'):
     with col5:
         st.text(recommended_movie_names[4])
         st.image(recommended_movie_posters[4])
+
 
 
