@@ -1,2 +1,2 @@
 # Edunet-Project
-Movie Recommender System Porject
+Movie Recommender System Project
